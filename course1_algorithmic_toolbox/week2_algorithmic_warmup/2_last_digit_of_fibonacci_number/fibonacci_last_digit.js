@@ -15,10 +15,9 @@ function readLine(line) {
 
 function fib(n) {
     // write your code here
-    while(n>60){
-        // fib numbers ending repeat every 60 number
-        n=n-60
-    }
+    // fib numbers ending repeat every 60 number
+    n=n%60
+    
     if(n <= 1) return n;
     const fibArray = [0,1]
     for(let i = 2; i <= n ; i++ ){

@@ -15,10 +15,7 @@ def get_fibonacci_last_digit_naive(n):
 
 
 def calc_fib_last_digit_fast(n):
-    while(n>60):
-        # fib numbers ending repeat every 60 number
-        n=n-60
-
+    n = n % 60
     if (n <= 1):
         return n
 
