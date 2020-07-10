@@ -26,7 +26,7 @@ def calc_fib_last_digit_sum(m,n):
     previous = 0
     current  = 1
     sum      = 1
-    # find the first 60 fib (they repeat every 60)
+    # find the first 60 fib (last digit repeat every 60)
     for i in range(2,60):
         previous, current = current, previous + current
         sum += current
