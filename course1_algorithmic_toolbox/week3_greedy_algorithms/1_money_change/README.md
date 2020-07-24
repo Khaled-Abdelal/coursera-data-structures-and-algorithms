@@ -6,7 +6,7 @@ used by cashiers all over the world millions of times per day.
 Task. The goal in this problem is to find the minimum number of coins needed to change the input value
 (an integer) into coins with denominations 1, 5, and 10.
 ### Input Format.
-TThe input consists of a single integer `m`.
+The input consists of a single integer `m`.
 ### Constraints.
  `1 ≤ m ≤ 10 ^3`.
 ### Output Format. 
