@@ -48,9 +48,9 @@
       On the other hand, T(n) = 33n<sup>3</sup> + 2n + 7 > n<sup>3</sup> for all positive n. Therefore T(n) ∊ Ω(n<sup>3</sup>).
       And consequently T(n) ∊ Θ(n<sup>3</sup>).
   * ### week3
-  #### Greedy Algorithms.
-  The main ingredients in any greedy algorithm is greedy choice and reduction to subproblem.
-    
+    #### Greedy Algorithms.
+    The main ingredients in any greedy algorithm is greedy choice and reduction to subproblem.
+      
     __1. safe move__
     for each problem the safe move is different,in every safe move, there's something like maximum, or minimum, or first, or leftmost, or rightmost. So, always safe move is greedy, but not all greedy moves are safe.
     you can assume elements are sorted if you can solve if you can just apply sorting first and then your greedy algorithm.
@@ -59,4 +59,40 @@
     __3. solve subproblem__
     prove that after your safe move the remaining of the problem is a subproblem of the first problem.
     __4. estimate running time__
-    
+  * ### week4
+    #### Divide and Conquer
+    the divide and conquer algorithm consists of 
+    __1. One__: breaking the problem into non-overlapping subproblems of the same type. 
+    __2. Two__: recursively solving those subproblems. 
+    And __3. Three__: combining the results. 
+
+    ##### Calculate Recursive Run Time
+    let's take binary search recursive solution as an example What is the run time
+    T(n) = T(n/2) + c
+    if we're cutting something in two over and over again. It's going to take log base two such iterations until we get down to 1. So the total here, is actually log base two of n + 1. The amount of work we're doing is c. So at each level, we're doing c work. So the total amount of work if we sum it, is just the sum from i=0 to log base 2 of n of c.
+    [check guide here](https://www.coursera.org/learn/algorithmic-toolbox/lecture/vKN0b/binary-search-runtime)
+
+    ###### Master Theorem
+    The master theorem provides a solution to recurrence relations of the form
+        T(n)= aT(n/b)+ O(n^d)
+  for constants a ≥ 1 and b > 1 and d >= 0. Such recurrences occur frequently in the runtime analysis of many commonly encountered algorithms.
+  T(n) = O(n<sup>d</sup>)    if d > log<sub>b</sub>a.
+  T(n) = O(n<sup>d</sup>logn)    if d = log<sub>b</sub>a.
+  T(n) = O(n<sup>log<sub>b</sub>a</sup>)    if d > log<sub>b</sub>a.
+    ##### Sorting Algorithms
+    ###### Selection Sort
+      The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.
+    ###### Insertion Sort
+      Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+    ###### Bubble Sort
+     Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+    ###### Merge Sort
+     Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
+     ###### QuickSort
+     Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
+
+    __1__ Always pick first element as pivot.
+    __2__ Always pick last element as pivot (implemented below)
+    __3__ Pick a random element as pivot.
+    __4__ Pick median as pivot.
+    The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
